@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run make-space && npm run build-js",
+    "build-js": "./node_modules/babel/bin/babel/index.js ./src --out-dir ./dist",
+    "make-space": "rm -rf dist && mkdir dist",
+    "test": "mocha test/suite.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +20,7 @@
   },
   "homepage": "https://github.com/AntouanK/immutabix-client",
   "devDependencies": {
-    "6to5": "^3.5.3",
+    "babel": "^4.3.0",
     "mocha": "^2.1.0",
     "should": "^5.0.0"
   },
