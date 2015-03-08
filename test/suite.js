@@ -1,11 +1,13 @@
 
 var should            = require('should'),
-    immutabixServer   = require('immutabix');
+    immutabix         = require('immutabix');
 
 
 describe('immutabixClient', function(){
 
   var immutabixClient = require('../index');
+
+  immutabix.startServer({ port: 33445 });
 
   describe('immutabixClient module', function(){
 
@@ -13,6 +15,18 @@ describe('immutabixClient', function(){
       should.exist(immutabixClient);
     });
 
+    it('should have a connect function', function(){
+      should(immutabixClient.connect).be.a.Function;
+    })
+
+    it('should connect to a immutabix server', function(done){
+      immutabixClient.connect({
+        host: '127.0.0.1',
+        port: 33445,
+        protocol: 'ws',
+        pathname: 'some/path/'
+      });
+    });
 
   });
 

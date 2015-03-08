@@ -1,7 +1,7 @@
 {
   "name": "immutabix-client",
   "version": "1.0.0",
-  "description": "",
+  "description": "A client for the `immutabix` npm package",
   "main": "index.js",
   "scripts": {
     "build": "npm run make-space && npm run build-js",
@@ -20,11 +20,12 @@
   },
   "homepage": "https://github.com/AntouanK/immutabix-client",
   "devDependencies": {
-    "babel": "^4.3.0",
-    "mocha": "^2.1.0",
-    "should": "^5.0.0"
+    "babel": "^4",
+    "mocha": "^2",
+    "should": "^5",
+    "immutabix": "^1"
   },
   "dependencies": {
-    "websocket": "^1.0.17"
+    "websocket": "^1"
   }
 }
